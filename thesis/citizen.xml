@@ -1,0 +1,24 @@
+<vxml version="2.1">
+<var name="water_code"/>
+<form id="waterCode">
+<block>
+<prompt> Welcome! </prompt>
+</block>
+<field name="water_code" type="digits">
+<prompt> Please enter the water code</prompt>
+</field>
+<block>
+<if cond="water_code== '2'">
+<prompt>
+The water from this source is not safe to drink today.
+<break/>
+Please be sure to boil your water
+<break/>
+You could also use the activated charcoal method. Please add 2 teaspoons of activated charcoal to your water and wait up to 2-3 days before you drink it.
+</prompt>
+<else/>
+<prompt> The water from this source is safe to drink today.</prompt>
+</if>
+</block>
+</form>
+</vxml>

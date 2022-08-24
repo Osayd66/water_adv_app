@@ -1,0 +1,43 @@
+<vxml version="2.1">
+<var name="safety"/>
+<form id="login">
+<block>
+<prompt> Welcome! </prompt>
+</block>
+<field name="pin" type="digits">
+<prompt> Please enter your four digit PIN code</prompt>
+</field>
+<block>
+<if cond="pin== '8542'">
+<prompt> Okay thanks. </prompt>
+<goto next="#safetyMenu"/>
+<else/>
+<prompt> Wrong pin </prompt>
+<goto next="#login"/>
+</if>
+</block>
+</form>
+<menu id="safetyMenu" dtmf="true">
+<prompt> Select 1 to send safe water alert,Select 2 to send unsafe water alert</prompt>
+<choice next="#form1"/>
+<choice next="#form2"/>
+</menu>
+<form id="form1">
+<block>
+<assign name="status" expr="'safe'"/>
+<prompt>
+Thank you for sending the alert. This program will now end.The water is
+<value expr="safety"/>
+</prompt>
+</block>
+</form>
+<form id="form2">
+<block>
+<assign name="status" expr="'unsafe'"/>
+<prompt>
+Thank you for sending the alert. This program will now end. The water is
+<value expr="safety"/>
+</prompt>
+</block>
+</form>
+</vxml>

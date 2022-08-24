@@ -1,0 +1,14 @@
+<vxml version="2.1">
+<var name="callerID" expr="session.callerid"/>
+<form>
+<block>
+<if cond="callerID== '31683947615'">
+<goto next="http://webhosting.voxeo.net/208129/www/communityRepresentative.xml"/>
+<elseif cond="callerID== '31641157016'"/>
+<goto next="http://webhosting.voxeo.net/208129/www/communityRepresentative.xml"/>
+<else/>
+<goto next="http://webhosting.voxeo.net/208129/www/citizen.xml"/>
+</if>
+</block>
+</form>
+</vxml>
